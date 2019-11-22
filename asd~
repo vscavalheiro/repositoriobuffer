@@ -36,3 +36,26 @@ int writeDirEntry(struct t2fs_record record) {
 	free(buffer);
 	return 0;
 }
+
+
+
+int opendir2(void){
+	if(mounted_partition < 0){
+		return -1;	
+	}
+	dirOpened =1;
+	lastDirListed = 0;
+	
+	return 0;
+}
+int readdir2(DIRENT2* dentry)
+{	return -1;
+}
+int closedir2(void){	
+	if(mounted_partition < 0){
+		return -1;	
+	}
+	dirOpened = 0;
+	
+	return 0;
+}
